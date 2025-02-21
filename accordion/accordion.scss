@@ -1,0 +1,36 @@
+@use '../../../styles/abstracts' as *;
+
+/*$ // $======================== accordion ========================$ // $*/
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+
+  &__tab {
+    &._active {
+      .accordion__header-icon img {
+        transform: rotateX(180deg);
+      }
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__header-icon {
+    display: grid;
+    place-items: center;
+
+    img {}
+  }
+
+  &__body {
+    max-height: 0;
+    overflow: clip;
+    transition: max-height 250ms ease-in-out;
+  }
+}
